@@ -2,6 +2,7 @@
 
 # Test against these versions of Node.js.
 environment:
+  APPVEYOR_RDP_PASSWORD: "ember-cli-postcss"
   MOCHA_REPORTER: "mocha-appveyor-reporter"
   matrix:
     - nodejs_version: "6"
@@ -10,6 +11,9 @@ environment:
       platform: x86
     - nodejs_version: "9"
       platform: x86
+
+init:
+  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 # Install scripts. (runs after repo cloning)
 install:

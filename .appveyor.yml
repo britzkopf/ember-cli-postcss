@@ -2,7 +2,7 @@
 
 # Test against these versions of Node.js.
 environment:
-  APPVEYOR_RDP_PASSWORD: c3e9ab0b9d80c2bc5d110
+  APPVEYOR_RDP_PASSWORD: c3e9ab0b9d80c2bc5d110!
   MOCHA_REPORTER: "mocha-appveyor-reporter"
   matrix:
     - nodejs_version: "6"

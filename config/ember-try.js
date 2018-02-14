@@ -1,6 +1,6 @@
 /* eslint-env node */
 module.exports = {
-  useYarn: true,
+  // useYarn: true,
   scenarios: [
     {
       name: 'ember-default',

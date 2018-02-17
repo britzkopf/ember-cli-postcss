@@ -5,19 +5,17 @@ environment:
   APPVEYOR_RDP_PASSWORD: c3e9ab0b9d80c2bc5d110!
   MOCHA_REPORTER: "mocha-appveyor-reporter"
   matrix:
-    - nodejs_version: "6"
-      platform: x86
+
     - nodejs_version: "8"
       platform: x86
-    - nodejs_version: "9"
-      platform: x86
+
 
 init:
   - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 # Install scripts. (runs after repo cloning)
 install:
-  - ps: Install-Product node $env:nodejs_version
+  - ps: Install-Product node $env:nodejs_version x64
   - appveyor-retry npm i -g npm@^5
   - appveyor-retry yarn --no-lockfile
   #- appveyor-retry yarn global add bower

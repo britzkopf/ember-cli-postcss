@@ -18,7 +18,7 @@ install:
   - ps: Install-Product node $env:nodejs_version x64
   - appveyor-retry npm i -g npm@^5
   - appveyor-retry yarn --no-lockfile
-  #- appveyor-retry yarn global add bower
+  - appveyor-retry yarn global add bower
   - appveyor-retry yarn add mocha-appveyor-reporter # must be installed locally.
   - yarn list
   - node --version
